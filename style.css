@@ -9,6 +9,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: aliceblue;
+  position: relative;
 }
 
 p {
@@ -46,6 +47,39 @@ button:hover {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: auto auto auto;
+}
+.message {
+  display: none;
+  background-color: #4cb050;
+  right: 10px;
+  top: 5px;
+  position: fixed;
+  padding: 10px 0;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px 0 10px 10px;
+  -webkit-border-radius: 10px 0 10px 10px;
+  -moz-border-radius: 10px 0 10px 10px;
+  -ms-border-radius: 10px 0 10px 10px;
+  -o-border-radius: 10px 0 10px 10px;
+  animation: messagepop linear 2s;
+  -webkit-animation: messagepop linear 2s;
+}
+@keyframes messagepop {
+  50% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
 }
 .container0 {
   grid-column: 1/4;

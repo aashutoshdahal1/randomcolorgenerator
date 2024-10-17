@@ -21,6 +21,7 @@ const randomColorCodeGenerator = () => {
 
 const setRandomColors = () => {
   let btn = document.querySelectorAll("button");
+  let msg = document.querySelector(".message");
   //display random color for all each time it loads
   btn.forEach((e, i) => {
     let randomColorCode = randomColorCodeGenerator();
@@ -32,12 +33,17 @@ const setRandomColors = () => {
 
   btn.forEach((e, i) => {
     e.addEventListener("click", () => {
+      navigator.clipboard.writeText(e.innerHTML);
+      msg.style.display = "block";
       let randomColorCode = randomColorCodeGenerator();
 
       e.parentElement.previousElementSibling.style.backgroundColor = `#${String(
         randomColorCode
       )}`;
       e.innerHTML = `#${randomColorCode}`;
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 2000);
     });
   });
 };
